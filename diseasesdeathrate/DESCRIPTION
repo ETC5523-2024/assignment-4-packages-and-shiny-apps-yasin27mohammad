@@ -1,12 +1,12 @@
 Package: diseasesdeathrate
-Title: What the Package Does (One Line, Title Case)
+Title: Infectious and Parasitic Disease Death Rates in Asian Countries
 Version: 0.0.0.9000
 Authors@R: 
-    person("First", "Last", , "first.last@example.com", role = c("aut", "cre"),
-           comment = c(ORCID = "YOUR-ORCID-ID"))
-Description: What the package does (one paragraph).
-License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a
-    license
+    person("Mohammad", "Yasin", , "myas0010@studnet.monash.edu", role = c("aut", "cre"))
+Description: This package provides data on age-standardized death rates from infectious and parasitic diseases in Asian countries, 
+            as recorded by the World Health Organization (WHO). The dataset allows users to explore health trends specific to 
+            Asian regions, making it useful for researchers, public health analysts, and data scientists with a focus on Asia.
+License: `use_mit_license()`, `use_gpl3_license()` or friends to pick a license
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.3.2
