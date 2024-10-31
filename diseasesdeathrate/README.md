@@ -20,8 +20,6 @@ You can install the development version of diseasesdeathrate from
 
 ``` r
 remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad/diseasesdeathrate")
-#> Skipping install of 'diseasesdeathrate' from a github remote, the SHA1 (227cf2d3) has not changed since last install.
-#>   Use `force = TRUE` to force installation
 ```
 
 ## Example

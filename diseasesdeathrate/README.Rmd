@@ -25,7 +25,7 @@ The goal of diseasesdeathrate is to provide data on age-standardized death rates
 
 You can install the development version of diseasesdeathrate from [GitHub](https://github.com/) with:
 
-```{r}
+```r
 remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad/diseasesdeathrate")
 ```
 
