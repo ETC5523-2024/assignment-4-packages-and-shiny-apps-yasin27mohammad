@@ -15,3 +15,7 @@ Depends:
 LazyData: true
 Imports: 
     ggplot2 (>= 3.4.2)
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
