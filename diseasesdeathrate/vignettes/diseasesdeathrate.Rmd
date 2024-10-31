@@ -1,0 +1,74 @@
+---
+title: "diseasesdeathrate Overview"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{diseasesdeathrate Overview}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+
+
+
+
+The `diseasesdeathrate` package provides data and functions for exploring average death rates from infectious and parasitic diseases across Asian countries. The data covers a wide time span, specifically from 1950 to 2021, allowing for comprehensive analysis of trends and comparisons over time.
+
+## Data Description
+
+```{r, warning=FALSE, message=FALSE}
+library(diseasesdeathrate)
+library(ggplot2)
+library(tibble)
+library(dplyr)
+
+```
+
+
+```{r}
+desc <- tibble(
+  variable = c("Entity", "Code", "Year", "death rate per 100,000 population"),
+  class = c("character", "character", "integer", "double"),
+  description = c(
+    "Country of record",
+    "Country code",
+    "Year of data collection",
+    "Age-standardized death rate per 100,000 population"
+  )
+)
+
+library(kableExtra)
+kable(desc, caption = "Data Dictionary for `infectious_parasitic_diseases_death_rate` Dataset") %>%
+  kable_styling(full_width = FALSE)
+
+```
+
+
+Below are descriptions of the primary functions included in the package:
+
+- `avg_Deathrate()` - Calculates the average death rate of infectious and parasitic diseases for a specified country in Asia. This function filters data by country, calculates the mean of death rates, and returns the result. This function is useful for identifying long-term trends in death rates for particular countries.
+
+
+## Data
+
+```{r}
+# Example of viewing the data structure
+head(infectious_parasitic_diseases_death_rate)
+
+```
+
+## Example
+
+### Using the `avg_Deathrate()` function
+
+```{r}
+avg_Deathrate("Japan")
+```
+
+
