@@ -14,7 +14,11 @@ Depends:
     R (>= 2.10)
 LazyData: true
 Imports: 
-    ggplot2 (>= 3.4.2)
+    tidyverse,
+    shiny,
+    tibble,
+    kableExtra
+URL: https://github.com/ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad/
 Suggests: 
     knitr,
     rmarkdown

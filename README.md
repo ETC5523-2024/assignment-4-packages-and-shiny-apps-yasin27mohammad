@@ -52,6 +52,7 @@ ggplot(avg_death_rate, aes(x = reorder(Entity, -avg_death_rate), y = avg_death_r
   labs(title = "Average Death Rate from Infectious and Parasitic Diseases by Country (Asian Continent)",
        x = "Country",
        y = "Average Death Rate per 100,000 Population") +
+  
   theme_minimal() +
   theme(
     axis.text.x = element_text(angle = 90, hjust = 1, size = 8), 
