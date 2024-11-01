@@ -12,7 +12,8 @@ infectious_parasitic_diseases_death_rate<- read_csv("data-raw/infectious-and-par
                        "Georgia", "Iraq", "Israel", "Japan", "Jordan",
                        "Kazakhstan", "Kuwait", "Kyrgyzstan", "Lebanon",
                        "Malaysia", "Maldives", "Mongolia", "Oman",
-                       "Philippines", "Qatar", "Singapore", "Sri Lanka",
+                       "Philip
+                       pines", "Qatar", "Singapore", "Sri Lanka",
                        "Tajikistan", "Thailand", "Turkey", "Turkmenistan",
                        "United Arab Emirates", "Uzbekistan"))
 
