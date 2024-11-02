@@ -52,7 +52,7 @@ desc <- tibble(
 )
 
 library(kableExtra)
-kable(desc, caption = "Data Dictionary for `infectious_parasitic_diseases_death_rate` Dataset") %>%
+kable(desc, caption = "Data Dictionary for `infectious_parasitic_diseases_death_rate` Dataset") |>
   kable_styling(full_width = FALSE)
 
 ```
