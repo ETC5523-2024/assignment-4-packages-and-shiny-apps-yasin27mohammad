@@ -10,15 +10,23 @@ vignette: >
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  warning = FALSE, message = FALSE
 )
 ```
 
 
+Welcome to `diseasesdeathrate`, an R package designed to explore and analyze death rates associated with infectious and parasitic diseases across Asian countries. This package provides tools to examine trends over time, compare death rates between countries, and uncover insights into public health challenges within the region.
 
+The `diseasesdeathrate` package is ideal for epidemiologists, public health professionals, and researchers focused on Asia’s unique health landscape. Whether you're looking to assess the impact of health interventions or explore long-term disease trends, this package provides the tools you need to gain valuable insights from the `infectious_parasitic_diseases_death_rate` dataset.
 
+With the `diseasesdeathrate` package, you can:
 
-The `diseasesdeathrate` package provides data and functions for exploring average death rates from infectious and parasitic diseases across Asian countries. The data covers a wide time span, specifically from 1950 to 2021, allowing for comprehensive analysis of trends and comparisons over time.
+Calculate average death rates to identify overall disease burden across countries and time (`avg_Deathrate()`).
+
+Visualize temporal trends for specific countries to gain insights into how death rates have evolved (`plot_death_rate_trend()`).
+
+The dataset covers a wide time span, specifically from 1950 to 2021, allowing for a comprehensive analysis of trends and comparisons across Asian countries over time. These tools enable you to draw meaningful conclusions about health patterns and public health achievements over the decades.
 
 ## Data Description
 
@@ -31,7 +39,7 @@ library(dplyr)
 ```
 
 
-```{r}
+```{r, echo=FALSE}
 desc <- tibble(
   variable = c("Entity", "Code", "Year", "death rate per 100,000 population"),
   class = c("character", "character", "integer", "double"),
@@ -50,15 +58,19 @@ kable(desc, caption = "Data Dictionary for `infectious_parasitic_diseases_death_
 ```
 
 
+
 Below are descriptions of the primary functions included in the package:
 
 - `avg_Deathrate()` - Calculates the average death rate of infectious and parasitic diseases for a specified country in Asia. This function filters data by country, calculates the mean of death rates, and returns the result. This function is useful for identifying long-term trends in death rates for particular countries.
 
+- `plot_death_rate_trend()` - Creates a line plot showing the trend of death rates from infectious and parasitic diseases over time for a specified country in Asia. This function filters the data by country and plots the death rate per 100,000 population against the year. It is useful for visualizing changes in death rates and identifying trends over the years for specific countries. This plot can provide insights into the historical health outcomes and the effectiveness of disease control measures.
+
+
 
 ## Data
 
-```{r}
-# Example of viewing the data structure
+```{r, Example of viewing the data structure}
+
 head(infectious_parasitic_diseases_death_rate)
 
 ```
@@ -68,7 +80,15 @@ head(infectious_parasitic_diseases_death_rate)
 ### Using the `avg_Deathrate()` function
 
 ```{r}
-avg_Deathrate("Japan")
+avg_Deathrate("Sri Lanka")
+```
+### Using the `plot_death_rate_trend()` function
+
+```{r, fig.width=6, fig.height=4.5}
+
+
+plot_death_rate_trend(infectious_parasitic_diseases_death_rate, "Sri Lanka")
+
 ```
 
 
