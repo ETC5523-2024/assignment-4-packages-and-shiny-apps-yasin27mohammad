@@ -19,7 +19,7 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `diseasesdeathrate` package provides access to age-standardized death rate data for infectious and parasitic diseases across multiple Asian countries. Sourced from the `World Health Organization` (WHO), this package enables users to analyze and visualize health trends related to infectious diseases, providing insights into public health challenges and policy implications within Asia. It is designed for analysts, researchers, and policymakers interested in examining disease impacts over time and across different countries in the region. [Website](https://etc5523-2024.github.io/assignment-4-packages-and-shiny-apps-yasin27mohammad/)
+The `diseasesdeathrate` package provides access to age-standardized death rate data for infectious and parasitic diseases across multiple Asian countries. Sourced from the `World Health Organization` (WHO), this package enables users to analyze and visualize health trends related to infectious diseases, providing insights into public health challenges and policy implications within Asia. It is designed for analysts, researchers, and policymakers interested in examining disease impacts over time and across different countries in the region. [Website] s/)
 
 ## Installation
 
