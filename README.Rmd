@@ -10,7 +10,7 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.path = "man/figures/README-",
   out.width = "100%",
-  warning = FALSE, message = FALSE
+   warning = FALSE, message = FALSE
 )
 ```
 
@@ -19,55 +19,51 @@ knitr::opts_chunk$set(
 <!-- badges: start -->
 <!-- badges: end -->
 
-The `diseasesdeathrate` package provides access to data on age-standardized death rates from infectious and parasitic diseases across multiple Asian countries. This data, sourced from `the World Health Organization (WHO)`, enables users to analyze and visualize health trends related to infectious diseases, facilitating insights into public health challenges and policy implications within Asia. It is designed for analysts, researchers, and policymakers interested in examining disease impact over time and across different countries in the region.
-
+The `diseasesdeathrate` package provides access to age-standardized death rate data for infectious and parasitic diseases across multiple Asian countries. Sourced from the `World Health Organization` (WHO), this package enables users to analyze and visualize health trends related to infectious diseases, providing insights into public health challenges and policy implications within Asia. It is designed for analysts, researchers, and policymakers interested in examining disease impacts over time and across different countries in the region.
 
 ## Installation
 
-You can install the development version of `diseasesdeathrate` from [GitHub](https://github.com/) with:
+You can install the development version of diseasesdeathrate from [GitHub](https://github.com/) with:
 
-
-```{r}
-# install.packages("devtools")
-
-devtools::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad")
+``` r
+# install.packages("remotes")
+remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad")
 ```
-
-
-
 
 ## Example
 
+This basic example demonstrates how to calculate and visualize the average death rate from infectious and parasitic diseases for each Asian country in the dataset.
 
-This is a basic example which shows you how to solve a common problem:
-
-```{r, example}
+```{r ,example}
 library(diseasesdeathrate)
 library(ggplot2)
 library(dplyr)
+
 
 avg_death_rate <- infectious_parasitic_diseases_death_rate |>
   group_by(Entity) |>
   summarize(avg_death_rate = mean(`death rate per 100,000 population`, na.rm = TRUE))
 
-# Plot the average death rate per country
 
 ggplot(avg_death_rate, aes(x = reorder(Entity, -avg_death_rate), y = avg_death_rate, fill = avg_death_rate)) +
   geom_col() +
-  scale_fill_gradient(low = "skyblue", high = "darkblue") + # Color gradient for fill
-  labs(title = "Average Death Rate from Infectious and Parasitic Diseases by Country (Asian Continent)",
-       x = "Country",
-       y = "Average Death Rate per 100,000 Population") +
-  
+  scale_fill_gradient(low = "skyblue", high = "darkblue") +
+  labs(
+    title = "Average Death Rate from Infectious and Parasitic Diseases by Country (Asia)",
+    x = "Country",
+    y = "Average Death Rate per 100,000 Population"
+  ) +
   theme_minimal() +
   theme(
-    axis.text.x = element_text(angle = 90, hjust = 1, size = 8), 
-    plot.title = element_text(size = 10, face = "bold"), 
+    axis.text.x = element_text(angle = 90, hjust = 1, size = 8),
+    plot.title = element_text(size = 10, face = "bold"),
     axis.title = element_text(size = 9.5),
     legend.position = "right"
   ) +
   guides(fill = guide_colorbar(title = "Avg Death Rate"))
+
 ```
+
 
 ## Overview of Key Functions in `diseasesdeathrate` package
 
