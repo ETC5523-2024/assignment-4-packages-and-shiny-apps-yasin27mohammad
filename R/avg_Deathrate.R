@@ -9,11 +9,11 @@
 #' avg_Deathrate("Japan")
 #' @export
 avg_Deathrate <- function(country = NULL, data = infectious_parasitic_diseases_death_rate) {
-  # Filter data for the specified country if provided
-  data_filtered <- data %>%
+
+  data_filtered <- data |>
     dplyr::filter(is.null(country) | Entity == country)
 
-  # Calculate and return the average death rate
+
   avg_rate <- mean(data_filtered$`death rate per 100,000 population`, na.rm = TRUE)
 
   return(avg_rate)
