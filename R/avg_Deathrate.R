@@ -25,3 +25,4 @@ avg_Deathrate <- function(country = NULL, data = infectious_parasitic_diseases_d
 
 
 
+
