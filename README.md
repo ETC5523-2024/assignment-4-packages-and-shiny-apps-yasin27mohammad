@@ -36,8 +36,8 @@ library(diseasesdeathrate)
 library(ggplot2)
 library(dplyr)
 
-avg_death_rate <- infectious_parasitic_diseases_death_rate %>%
-  group_by(Entity) %>%
+avg_death_rate <- infectious_parasitic_diseases_death_rate |>
+  group_by(Entity) |>
   summarize(avg_death_rate = mean(`death rate per 100,000 population`, na.rm = TRUE))
 
 # Plot the average death rate per country
@@ -63,7 +63,7 @@ ggplot(avg_death_rate, aes(x = reorder(Entity, -avg_death_rate), y = avg_death_r
 
 ## Overview of Key Functions in `diseasesdeathrate` package
 
-The diseasesdeathrate package includes two essential functions that
+The `diseasesdeathrate` package includes two essential functions that
 allow users to explore infectious and parasitic disease data across
 Asian countries:
 

@@ -26,11 +26,14 @@ The `diseasesdeathrate` package provides access to data on age-standardized deat
 
 You can install the development version of `diseasesdeathrate` from [GitHub](https://github.com/) with:
 
-```r
+
+```{r}
 # install.packages("devtools")
 
 devtools::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad")
 ```
+
+
 
 
 ## Example
@@ -38,13 +41,13 @@ devtools::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasi
 
 This is a basic example which shows you how to solve a common problem:
 
-```{r example}
+```{r, example}
 library(diseasesdeathrate)
 library(ggplot2)
 library(dplyr)
 
-avg_death_rate <- infectious_parasitic_diseases_death_rate %>%
-  group_by(Entity) %>%
+avg_death_rate <- infectious_parasitic_diseases_death_rate |>
+  group_by(Entity) |>
   summarize(avg_death_rate = mean(`death rate per 100,000 population`, na.rm = TRUE))
 
 # Plot the average death rate per country
@@ -68,7 +71,7 @@ ggplot(avg_death_rate, aes(x = reorder(Entity, -avg_death_rate), y = avg_death_r
 
 ## Overview of Key Functions in `diseasesdeathrate` package
 
-The diseasesdeathrate package includes two essential functions that allow users to explore infectious and parasitic disease data across Asian countries:
+The `diseasesdeathrate` package includes two essential functions that allow users to explore infectious and parasitic disease data across Asian countries:
 
 - `avg_Deathrate()`: This function calculates the average death rate for infectious and parasitic diseases in a specified Asian country. By filtering the data for the selected country, it computes a single average value that reflects the overall impact of these diseases over time. This is useful for gaining a quick understanding of a country's long-term disease burden.
 
