@@ -4,7 +4,8 @@
 #' and parasitic diseases across Asian countries. The package includes functions to explore
 #' trends over time and compare between countries.
 #'
-#' @docType package
+#' @docType _package
 #' @name diseasesdeathrate
 #' @import ggplot2 dplyr shiny
 NULL
+
