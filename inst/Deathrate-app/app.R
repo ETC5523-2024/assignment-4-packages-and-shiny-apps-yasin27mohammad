@@ -156,7 +156,7 @@ server <- function(input, output) {
     req(input$country)
 
 
-    trend_data <- infectious_parasitic_diseases_death_rate %>%
+    trend_data <- infectious_parasitic_diseases_death_rate |>
       filter(Entity == input$country,
              Year >= input$year_range[1], Year <= input$year_range[2])
 
@@ -178,7 +178,7 @@ server <- function(input, output) {
     req(input$countries)
 
 
-    comparison_data <- infectious_parasitic_diseases_death_rate %>%
+    comparison_data <- infectious_parasitic_diseases_death_rate |>
       filter(Entity %in% input$countries,
              Year >= input$year_range_compare[1], Year <= input$year_range_compare[2])
 
@@ -200,10 +200,10 @@ server <- function(input, output) {
     req(input$countries)
 
 
-    summary_data <- infectious_parasitic_diseases_death_rate %>%
+    summary_data <- infectious_parasitic_diseases_death_rate |>
       filter(Entity %in% input$countries,
-             Year >= input$year_range_compare[1], Year <= input$year_range_compare[2]) %>%
-      group_by(Entity) %>%
+             Year >= input$year_range_compare[1], Year <= input$year_range_compare[2]) |>
+      group_by(Entity) |>
       summarise(
         Year_Range = paste(input$year_range_compare[1], "-", input$year_range_compare[2]),
         Mean_Death_Rate = round(mean(`death rate per 100,000 population`, na.rm = TRUE), 2),
