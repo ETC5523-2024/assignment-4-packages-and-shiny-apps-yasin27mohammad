@@ -1,25 +1,30 @@
 
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
-# diseasesdeathrate
+## diseasesdeathrate
 
 <!-- badges: start -->
 <!-- badges: end -->
 
-The goal of diseasesdeathrate is to provide data on age-standardized
-death rates from infectious and parasitic diseases across various Asian
-countries, as recorded by the World Health Organization (WHO). This
-dataset allows users to explore and analyze health trends specific to
-Asian regions, supporting public health research and data analysis in
-the context of infectious diseases.
+The `diseasesdeathrate` package provides access to data on
+age-standardized death rates from infectious and parasitic diseases
+across multiple Asian countries. This data, sourced from
+`the World Health Organization (WHO)`, enables users to analyze and
+visualize health trends related to infectious diseases, facilitating
+insights into public health challenges and policy implications within
+Asia. It is designed for analysts, researchers, and policymakers
+interested in examining disease impact over time and across different
+countries in the region.
 
 ## Installation
 
-You can install the development version of diseasesdeathrate from
+You can install the development version of `diseasesdeathrate` from
 [GitHub](https://github.com/) with:
 
 ``` r
-remotes::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad/diseasesdeathrate")
+# install.packages("devtools")
+
+devtools::install_github("ETC5523-2024/assignment-4-packages-and-shiny-apps-yasin27mohammad")
 ```
 
 ## Example
@@ -29,16 +34,7 @@ This is a basic example which shows you how to solve a common problem:
 ``` r
 library(diseasesdeathrate)
 library(ggplot2)
-#> Warning: package 'ggplot2' was built under R version 4.3.3
 library(dplyr)
-#> 
-#> Attaching package: 'dplyr'
-#> The following objects are masked from 'package:stats':
-#> 
-#>     filter, lag
-#> The following objects are masked from 'package:base':
-#> 
-#>     intersect, setdiff, setequal, union
 
 avg_death_rate <- infectious_parasitic_diseases_death_rate %>%
   group_by(Entity) %>%
@@ -64,3 +60,23 @@ ggplot(avg_death_rate, aes(x = reorder(Entity, -avg_death_rate), y = avg_death_r
 ```
 
 <img src="man/figures/README-example-1.png" width="100%" />
+
+## Overview of Key Functions in `diseasesdeathrate` package
+
+The diseasesdeathrate package includes two essential functions that
+allow users to explore infectious and parasitic disease data across
+Asian countries:
+
+- `avg_Deathrate()`: This function calculates the average death rate for
+  infectious and parasitic diseases in a specified Asian country. By
+  filtering the data for the selected country, it computes a single
+  average value that reflects the overall impact of these diseases over
+  time. This is useful for gaining a quick understanding of a country’s
+  long-term disease burden.
+
+- `plot_death_rate_trend()`: This function generates a line plot that
+  shows how death rates from infectious and parasitic diseases have
+  changed over time for a particular Asian country. The trend line
+  offers a clear visual of increases, decreases, or stability in death
+  rates, helping users identify patterns and assess the effects of
+  public health measures.
